@@ -9,16 +9,18 @@ var MyTitle = React.createClass({
       )
     )
   }
-})
+});
+
+var MyTitleFactory = React.createFactory(MyTitle);
 
 var MyFirstComponent = React.createClass({
   render: function () {
     return (
       div(null,
-        React.createElement(MyTitle),
-        React.createElement(MyTitle),
-        React.createElement(MyTitle),
-        React.createElement(MyTitle)
+        MyTitleFactory(null),
+        MyTitleFactory(null),
+        MyTitleFactory(null),
+        MyTitleFactory(null)
       )
     )
   }
