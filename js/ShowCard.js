@@ -2,7 +2,7 @@ import React from 'react'
 const { shape, string } = React.PropTypes
 
 const ShowCard = React.createClass({
-  propTypes: {
+  propTypes: { // propTypes is only used as a development tool, are not checked in production
     show: shape({
       poster: string,
       title: string,
