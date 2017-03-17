@@ -1,17 +1,15 @@
 import React from 'react'
-const { shape, string } = React.PropTypes
+const { string } = React.PropTypes
 
 const ShowCard = React.createClass({
   propTypes: { // propTypes is only used as a development tool, are not checked in production
-    show: shape({
-      poster: string,
-      title: string,
-      year: string,
-      description: string
-    })
+    poster: string,
+    title: string,
+    year: string,
+    description: string
   },
   render () {
-    const { poster, title, year, description } = this.props.show // destructuring
+    const { poster, title, year, description } = this.props // destructuring
     return (
       <div className='show-card'>
         <img src={`/public/img/posters/${poster}`} />
