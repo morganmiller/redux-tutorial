@@ -1,5 +1,6 @@
 import React from 'react'
 const { shape, string } = React.PropTypes
+import Header from './Header'
 
 const Details = React.createClass({
   propTypes: {
@@ -13,13 +14,9 @@ const Details = React.createClass({
   },
   render () {
     const { title, description, year, poster, trailer } = this.props.show
-    console.log(this.props)
-    console.log(trailer)
     return (
       <div className='details'>
-        <header>
-          <h1>video streaming thing</h1>
-        </header>
+        <Header />
         <section>
           <h1>{title}</h1>
           <h2>{year}</h2>
