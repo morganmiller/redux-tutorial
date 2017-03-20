@@ -1,12 +1,21 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { setSearchTerm } from './actionCreators'
 import { Link } from 'react-router'
 
-export default class Header extends React.Component {
+class Header extends React.Component {
+  constructor (props) {
+    super(props)
+    this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
+  }
+  handleSearchTermChange() {
+    this.props.dispatch(setSearchTerm(event.target.value))
+  }
   render () {
     let utilSpace
     if (this.props.showSearch) {
       utilSpace = <input
-        onChange={this.props.handleSearchTermChange}
+        onChange={this.handleSearchTermChange}
         value={this.props.searchTerm}
         type='text' placeholder='Search' />
     } else {
@@ -33,12 +42,18 @@ export default class Header extends React.Component {
 
 const { func, bool ,string } = React.PropTypes
 Header.propTypes = {
-  handleSearchTermChange: func,
+  dispatch: func,
   showSearch: bool,
   searchTerm: string
 }
 
-// export default Header
+const mapStateToProps = (state) => {
+  return {
+    searchTerm: state.searchTerm
+  }
+}
+
+export default connect(mapStateToProps)(Header)
 {/* <header>
   <h1>video streaming thing</h1>
   <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search' />
