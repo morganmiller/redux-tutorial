@@ -8,7 +8,7 @@ class Header extends React.Component {
     super(props)
     this.handleSearchTermChange = this.handleSearchTermChange.bind(this)
   }
-  handleSearchTermChange() {
+  handleSearchTermChange (event) {
     this.props.dispatch(setSearchTerm(event.target.value))
   }
   render () {
