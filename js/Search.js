@@ -8,9 +8,9 @@ const Search = React.createClass({
   propTypes: {
     shows: arrayOf(shape({
       title: string,
-      description: string,
-      searchTerm: string
-    }))
+      description: string
+    })),
+    searchTerm: string
   },
   render () {
     return (

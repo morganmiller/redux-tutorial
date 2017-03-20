@@ -40,7 +40,7 @@ class Header extends React.Component {
   }
 }
 
-const { func, bool ,string } = React.PropTypes
+const { func, bool, string } = React.PropTypes
 Header.propTypes = {
   dispatch: func,
   showSearch: bool,
@@ -54,7 +54,3 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps)(Header)
-{/* <header>
-  <h1>video streaming thing</h1>
-  <input onChange={this.handleSearchTermChange} value={this.state.searchTerm} type='text' placeholder='Search' />
-</header> */}

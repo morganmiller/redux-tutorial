@@ -3,8 +3,8 @@ import rootReducer from './reducers'
 
 const store = createStore(rootReducer, compose(
   typeof window === 'object' &&
-    typeof window.devToolsExtensions !== 'undefined' ?
-    window.devToolsExtension() : (f) => f
+    typeof window.devToolsExtensions !== 'undefined'
+    ? window.devToolsExtension() : (f) => f
 ))
 
 export default store
