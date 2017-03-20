@@ -7,7 +7,8 @@ const ShowCard = React.createClass({
     poster: string,
     title: string,
     year: string,
-    description: string
+    description: string,
+    imdbID: string
   },
   render () {
     const { poster, title, year, description } = this.props // destructuring
