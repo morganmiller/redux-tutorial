@@ -3,7 +3,6 @@ const { shape, string, func } = React.PropTypes
 import { connect } from 'react-redux'
 import { getOMDBDetails } from './actionCreators'
 import Header from './Header'
-import axios from 'axios' // easy-to-use AJAX client
 
 const Details = React.createClass({
   propTypes: {
@@ -21,7 +20,7 @@ const Details = React.createClass({
     dispatch: func
   },
   componentDidMount () {
-    if(!this.props.omdbData.imdbRating) {
+    if (!this.props.omdbData.imdbRating) {
       this.props.dispatch(getOMDBDetails(this.props.show.imdbID))
     }
   },

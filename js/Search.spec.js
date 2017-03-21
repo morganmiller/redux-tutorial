@@ -15,7 +15,7 @@ test('Search snapshot test', () => {
 })
 
 test('Search should render a ShowCard for each show', () => {
-  const component = shallow(<UnwrappedSearch searchTerm='' shows={preload.shows}/>)
+  const component = shallow(<UnwrappedSearch searchTerm='' shows={preload.shows} />)
   expect(component.find(ShowCard).length).toEqual(preload.shows.length)
 })
 
